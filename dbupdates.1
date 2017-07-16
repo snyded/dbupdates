@@ -1,0 +1,31 @@
+.\"
+.\" @(#)dbupdates.1 1.1  08/08/97 11:09:36  08/08/97 11:50:16
+.\"
+.TH DBUPDATES 1 "dbupdates 1.1"
+.SH NAME
+dbupdates \- generates SQL to update statistics for a database or table
+.SH SYNOPSIS
+dbupdates \-d dbname [\-t tabname] [\-l] [datafile]
+.SH DESCRIPTION
+.I Dbupdates
+will generate SQL statements that update statistics for a database or table
+.SH OPTIONS
+.TP
+.B \-d
+database name
+.TP
+.B \-t
+table name
+.TP
+.B \-l
+run "update statistics low drop distributions" first
+.TP
+.B datafile
+the file containing additional columns to update statistics high
+.SH NOTES
+The format for
+.I datafile
+is (one entry per line)
+.B [owner:]tabname.colname
+.SH SUPPORT
+Send bug reports to Dave Snyder <dave@snide.com>
